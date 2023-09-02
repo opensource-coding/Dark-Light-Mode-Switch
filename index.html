@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dark/Light Mode Switch</title>
+  </head>
+  <body>
+    <label class="switch" for="switch">
+      <input type="checkbox" id="switch" />
+      <div class="sunmoon">
+        <div class="darkside"></div>
+      </div>
+      <div class="border"></div>
+      <div class="clouds">
+        <img src="cloud_1.svg" alt="" class="cloud cloud-1" />
+        <img src="cloud_2.svg" alt="" class="cloud cloud-2" />
+        <img src="cloud_3.svg" alt="" class="cloud cloud-3" />
+        <img src="cloud_4.svg" alt="" class="cloud cloud-4" />
+        <img src="stars.svg" alt="" class="stars" />
+      </div>
+    </label>
+
+    <script>
+      const toggleSwitch = document.querySelector(
+        '.switch input[type="checkbox"]'
+      );
+
+      function switchTheme(e) {
+        if (e.target.checked) {
+          document.body.classList.add("dark");
+        } else {
+          document.body.classList.remove("dark");
+        }
+      }
+
+      toggleSwitch.addEventListener("change", switchTheme, false);
+    </script>
+  </body>
+</html>
